@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10131a">
+<meta name="description" content="GameVault — your personal gaming companion.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="styles.css">
+<title>GameVault</title>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <a class="brand" href="#home"><span class="brandmark">GV</span><span>GameVault</span></a>
+    <nav>
+      <a class="nav active" href="#home">⌂ <span>Home</span></a>
+      <a class="nav" href="#games">▣ <span>Games</span></a>
+      <a class="nav" href="#tasks">✓ <span>Tasks</span></a>
+    </nav>
+    <div class="sidebar-foot">GameVault <b>v0.1</b><small>Local prototype</small></div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <div><p class="eyebrow">WELCOME BACK</p><h1 id="pageTitle">Home</h1></div>
+      <button class="avatar" aria-label="Profile">R</button>
+    </header>
+
+    <section id="view"></section>
+  </main>
+
+  <button class="fab" id="quickAdd" aria-label="Quick add">＋</button>
+
+  <nav class="mobile-nav">
+    <a href="#home" class="mnav active"><span>⌂</span>Home</a>
+    <a href="#games" class="mnav"><span>▣</span>Games</a>
+    <button id="mobileAdd" class="mobile-add" aria-label="Quick add">＋</button>
+    <a href="#tasks" class="mnav"><span>✓</span>Tasks</a>
+    <a href="#profile" class="mnav"><span>●</span>Profile</a>
+  </nav>
+</div>
+
+<dialog id="addDialog">
+<form method="dialog" id="addForm">
+  <div class="dialog-head"><div><p class="eyebrow">CAPTURE IT</p><h2>Quick Add</h2></div><button value="cancel" class="icon-btn">×</button></div>
+  <label>Game<select id="addGame"></select></label>
+  <label>Type<select id="addType"><option value="task">Task</option><option value="note">Note</option><option value="resume">Resume point</option></select></label>
+  <label>Details<textarea id="addText" rows="4" required maxlength="500" placeholder="What do you want to remember?"></textarea></label>
+  <button class="primary" value="default" id="saveAdd">Save</button>
+</form>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
