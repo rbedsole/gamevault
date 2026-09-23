@@ -24,7 +24,7 @@ get tasks(){return read("gv_tasks",[])},set tasks(v){write("gv_tasks",v)},
 get notes(){return read("gv_notes",[])},set notes(v){write("gv_notes",v)},
 get resources(){return read("gv_resources",[])},set resources(v){write("gv_resources",v)}
 };
-const view=document.querySelector("#view"),pageTitle=document.querySelector("#pageTitle"),esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const view=document.querySelector("#view"),pageTitle=document.querySelector("#pageTitle");function esc(value){return String(value==null?"":value).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 const gameOf=p=>store.games.find(g=>g.id===p.gameId),playsFor=id=>store.plays.filter(p=>p.gameId===id),currentPlay=id=>playsFor(id).find(p=>p.active)||playsFor(id)[0];
 function playCard(p){const g=gameOf(p);return '<article class="card" data-play="'+p.id+'"><span class="platform">'+esc(g?.platform)+'</span><h3>'+esc(g?.title)+'</h3><p class="muted">'+esc(p.name)+(p.meta?" • "+esc(p.meta):"")+'</p><div class="resume-small"><b>Resume:</b> '+esc(p.resume||"No resume point yet.")+'</div></article>'}
 function gameCard(g){const ps=playsFor(g.id),p=currentPlay(g.id);return '<article class="card" data-game="'+g.id+'"><span class="platform">'+esc(g.platform)+'</span><h3>'+esc(g.title)+'</h3><p class="muted">'+ps.length+' playthrough'+(ps.length===1?"":"s")+'</p><div class="resume-small"><b>Current:</b> '+esc(p?.name||"No playthrough yet")+'</div></article>'}
