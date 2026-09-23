@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#10131a">
 <meta name="description" content="GameVault — your personal gaming companion.">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="stylesheet" href="styles.css?v=031">
+<link rel="stylesheet" href="styles.css?v=032">
 <title>GameVault</title>
 </head>
 <body>
@@ -65,7 +65,7 @@
   window.__gvShowError=show;
   window.addEventListener("error",function(e){show("JS error: "+(e.message||"unknown")+" @ "+(e.filename||"unknown")+":"+e.lineno+":"+e.colno)});
   var script=document.createElement("script");
-  script.src="app.js?v=031";
+  script.src="app.js?v=032";
   script.onload=function(){setTimeout(function(){if(!document.querySelector("#view").innerHTML.trim())show("app.js loaded, but Home did not render.")},500)};
   script.onerror=function(){show("app.js failed to load: "+script.src)};
   document.body.appendChild(script);
