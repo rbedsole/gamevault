@@ -6,3 +6,5 @@
 @media(max-width:680px){.section-head{align-items:flex-start;flex-wrap:wrap}.actions{width:100%}.actions button{flex:1}}
 
 .danger,.delete-mini{border:1px solid #7b3434;background:#2a1518;color:#ff9a9a;border-radius:11px;cursor:pointer}.danger{min-height:44px;padding:0 16px;font-weight:800}.delete-mini{margin-left:auto;padding:7px 10px;font-size:12px}.manage-actions{display:flex;justify-content:space-between;gap:10px;margin-top:18px}.manage-actions .primary{margin-left:auto}
+
+.resource-head{display:flex;justify-content:flex-end;margin:0 0 14px}.resource-link{color:var(--accent2);overflow-wrap:anywhere}
