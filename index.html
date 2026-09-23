@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#10131a">
 <meta name="description" content="GameVault — your personal gaming companion.">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="stylesheet" href="styles.css?v=033">
+<link rel="stylesheet" href="styles.css?v=020-final">
 <title>GameVault</title>
 </head>
 <body>
@@ -55,21 +55,6 @@
 <dialog id="resourceDialog"><form method="dialog" id="resourceForm"><div class="dialog-head"><div><p class="eyebrow">SAVE A LINK</p><h2>Add Resource</h2></div><button id="resourceClose" class="icon-btn" aria-label="Close">×</button></div><label>Name<input id="resourceLabel" required maxlength="100"></label><label>URL<input id="resourceUrl" required maxlength="1000"></label><button class="primary" id="resourceSave">Save Resource</button></form></dialog>
 
 <dialog id="manageDialog"><form method="dialog" id="manageForm"><div class="dialog-head"><div><p class="eyebrow">GAMEVAULT</p><h2 id="manageTitle">Edit</h2></div><button id="manageClose" class="icon-btn" aria-label="Close">×</button></div><label>Name<input id="mName" required maxlength="100"></label><label><span id="mPlatformLabel">Platform</span><input id="mPlatform" maxlength="100"></label><div id="playFields"><label>Resume Here<textarea id="mResume" rows="3" maxlength="500"></textarea></label><label>Current Goal<textarea id="mGoal" rows="3" maxlength="500"></textarea></label></div><div class="manage-actions"><button class="danger" id="manageDelete" type="button" hidden>Delete</button><button class="primary" id="manageSave">Save</button></div></form></dialog>
-<script>
-(function(){
-  function show(msg){
-    var box=document.getElementById("startupError");
-    if(!box){box=document.createElement("div");box.id="startupError";box.style.cssText="position:fixed;z-index:99999;left:12px;right:12px;top:12px;padding:14px;background:#5b1010;color:white;border:2px solid #ff7b7b;border-radius:10px;font:14px/1.4 monospace;white-space:pre-wrap;overflow-wrap:anywhere";document.body.appendChild(box)}
-    box.textContent="GameVault loader diagnostic\n"+msg;
-  }
-  window.__gvShowError=show;
-  window.addEventListener("error",function(e){show("JS error: "+(e.message||"unknown")+" @ "+(e.filename||"unknown")+":"+e.lineno+":"+e.colno)});
-  var script=document.createElement("script");
-  script.src="app.js?v=033";
-  script.onload=function(){setTimeout(function(){if(!document.querySelector("#view").innerHTML.trim())show("app.js loaded, but Home did not render.")},500)};
-  script.onerror=function(){show("app.js failed to load: "+script.src)};
-  document.body.appendChild(script);
-})();
-</script>
+<script src="app.js?v=020-final"></script>
 </body>
 </html>
